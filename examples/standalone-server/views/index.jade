@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  .container
+   form.well.form-inline(method='post', id='login', action='/retrieve')
+    input.input-small(type='text', placeholder='Email', name='user[email]')
+    input.input-small(type='password', placeholder='Password', name='user[password]')
+    label.checkbox
+       input(type='checkbox')
+       | Remember me
+    button.btn(type='submit') Sign in
+  .container
+   form.form-inline(method='post', id='login', action='/retrieve')
+    input.input-small(type='text', placeholder='Email', name='user[email]')
+    input.input-small(type='password', placeholder='Password', name='user[password]')
+    label.checkbox
+       input(type='checkbox')
+       | Remember me
+    button.btn(type='submit') Sign in

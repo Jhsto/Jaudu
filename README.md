@@ -7,11 +7,13 @@
    [Redis](http://redis.io/) - Jaudu uses redis to store keys
 
 ##Installation:   
-```$ npm install jaudu```
+1. ```$ npm install jaudu```
+2. Get your jaudu.js from [here](http://jaudu.net/customize) and link it to your layouts file
 
 ##Usage:
 ```javascript
 var jaudu = require('jaudu');
+
 // Connect to redis host
 jaudu.Database(<redis_host>, <redis_password>, <port>);
 
@@ -23,16 +25,13 @@ app.use(jaudu);
 });
 ```
 
-##Jaudu.js
-   Get your preferred version of jaudu.js from [here](http://jaudu.net/customize) and add it to your layouts file.
-
 ##Defaults
    By default Jaudu will start websocket server on port 3012.
 
 
 
 ###Resources
-   Consult [jaudu.js documentation](http://jaudu.net/documentation) for more information about timelock and IP banning capabilities.
+   [Jaudu.js Documentaion](http://jaudu.net/documentation) - more information about timelock and IP banning capabilities.
 
 
 

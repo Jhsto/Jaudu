@@ -1,0 +1,16 @@
+{
+  "name": "Jaudu-standalone",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "app.js"
+  },
+  "dependencies": {
+    "express": "3.0.0rc1",
+    "jade": "0.27.2",
+    "request": "2.11.x",
+	"jaudu": "0.1.1"
+  },
+  "engines": {
+    "node": "0.8.x"
+  }
+}
