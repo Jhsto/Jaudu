@@ -1,0 +1,58 @@
+Documentation
+
+Please notice
+Jaudu completely relies on JavaScript. Your visitors must have JavaScript enabled at least on the pages you want to use Jaudu.
+If a visitor does not have JavaScript enabled user cannot continue with their action. We suggest you to inform your visitors to enable JavaScript on your site.
+
+Client-side
+
+Required JavaScript files
+First off, head to customize page where you can choose the jaudu.js of your choice. You then have to link it to your site, preferably inside your <head></head> tags. Jaudu will automatically load all scripts it needs, including jQuery, but in case your site already has jQuery, you can opt it out.
+
+
+Customizing jaudu.js
+
+Configuring timelock
+For timelock you need to select version of Jaudu, which is labeled as 'Jaudu with timelock' on customization page.
+
+For an example, changing the value to 5 will only allow the client to post once in 5 seconds. If the user attempts to POST more than once during the time period, the client will receive an alert box telling how long the client has to still wait before making a new request.
+
+The default interval time is 180 seconds.
+
+
+Configuring banning
+For banning you need to select version of Jaudu, which is labeled as 'Jaudu with banning' on customization page.
+
+In all its brevity the bantime: N defines the time of how long user will be banned, when treshold: N amount of POST actions are made during: N the last N seconds.
+
+By default user will be banned for 15 minutes if they have made 5 POST actions during the last 5 minutes.
+
+Ban counter will be pruned once the time during from the first POST action has elapsed.
+
+Bear in mind that IP-Banning cannot evaluate whether the action made by the user has been successfull or not. You might get banned even from legit POST actions.
+
+Server-side
+
+Overview
+
+Standalone use: (authenticate your own keys)
+For standalone use see Github
+
+Dependent use:
+Modifying the server-side to make the authentication work is rather simple process. First, you need to access the POST data from jaudu_secret and jaudu_public, which you then send to our servers at http://jaudu.net/api/check/[jaudu_secret]/[jaudu_public]. You can also evaluate the keys locally if you are running your own node instance.
+
+The response status code will be in case of success 200 and otherwise 406. Jaudu will also respond with a JSON body, where you can find more information about the request. Here is an example of JSON response:
+
+{ "response": "bad", "message": "The hashes do not exist or are not been bind to this domain" }
+
+The "response" will include either "bad" or "ok", whether the hashes were invalid or not. The "message" countains additional information about the request.
+
+In pseudocode the request would go about the following:
+
+var jaudu_secret = POST['jaudu_secret'], jaudu_public = POST['jaudu_public'] 
+http.request('http://jaudu.net/api/check/' + jaudu_secret + '/' + jaudu_public, function() { 
+if http_response_header !== 200 
+send 'There was a problem authenticating your login session' 
+else 
+continue with normal login_logic 
+})

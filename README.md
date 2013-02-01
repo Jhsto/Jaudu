@@ -1,14 +1,12 @@
-# [Jaudu](http://jaudu.net/) — Websocket powered CSRF protection
+# Jaudu — Websocket powered CSRF protection
    Jaudu is CSRF protection which uses websockets instead of cookies and session, resulting in tokens which cannot be parsed from DOM. Since many crackers and spammers use this method to bypass CSRF, Jaudu provides extra protection compared to formal CSRF protections. Jaudu also supports client side form timelocks and IP banning, which can be easily added by modifying jaudu.js javascript file.
-
-   [Demo](http://jaudu.net)
 
 ##Pre-requirements:
    [Redis](http://redis.io/) - Jaudu uses redis to store keys
 
 ##Installation:   
 1. ```$ npm install jaudu```
-2. Get your jaudu.js from [here](http://jaudu.net/customize) and link it to your layouts file
+2. Customize your choice of jaudu.js from /js folder. Please see docs folder for more information.
 
 ##Usage:
 ```javascript
@@ -28,15 +26,8 @@ app.use(jaudu);
 ##Defaults
    By default Jaudu will start websocket server on port 3012.
 
-
-
-###Resources
-   [Jaudu.js Documentaion](http://jaudu.net/documentation) - more information about timelock and IP banning capabilities.
-
-
-
 ###License (MIT)
-   Copyright (c) 2012 Juuso Haavisto <juuso@mail.com>
+   Copyright (c) 2012-2013 Juuso Haavisto <juuso@mail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

@@ -2,12 +2,6 @@
   "name": "jaudu",
   "description": "Jaudu middleware for express.js - Jaudu is cipher based, websocket powered, CSRF protection with additional security features",
   "author": "Juuso Haavisto <juuso@mail.com>",
-  "contributors": [ 
-    {
-      "name": "Juuso Haavisto",
-      "email": "juuso@mail.com"
-    } 
-  ],
   "main": "index",
   "scripts": {
     "start": "app.js"
